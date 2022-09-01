@@ -310,6 +310,529 @@ int main(){
     3. unsigned
 
 
+## Operators
+![Operators](./images/operators.png)
+
+```c++
+#include <stdio.h>
+
+int main()
+{
+    /* Arithmetic Operators */
+    int a = 20, b = 10;
+    printf("Add :%d \n", a + b); //30
+    printf("Sub:%d \n", a - b);  //10
+    printf("MUl:%d \n", a * b);  //200
+    printf("Division:%d \n", a / b); //2
+    printf("Reminder:%d \n", a % b); //0
+    printf("Preincrement:%d \n", ++a); //21
+    printf("Postincrement:%d \n", a++); // The value remain same as previous one..why?
+    printf("a value after Post incre:%d \n", a); //22
+    printf("Predecrement:%d \n", --a); //21
+    printf("Postdecrement:%d \n", a--); //21
+
+    /* Logical Operators */
+    int c = 0;
+    if ( a && b){  // AND operator
+        printf("The condition is true \n"); //This Print
+    }
+    
+    if ( c && b)
+    {
+        printf("The condition is true \n");
+    } else {
+        printf("The condition is False\n"); //This Print
+    }
+
+    if ( c || b)  // OR Operator
+    {
+        printf("The condition is true\n"); //This Print
+    } else {
+        printf("The condition is False\n");
+    } 
+
+    if (!c)     // NOT operator
+    {
+        printf("The condition is true\n"); //This Print
+    }
+    
+    /* Assignment Operator */
+    c = 10; // Assignment Opertor
+    c += 10; // Add AND 
+    printf("Add AND:%d \n", c); //20
+
+    c -= 10; // Sub AND 
+    printf("Sub AND:%d \n", c); //10
+    
+    return 0;
+}
+
+```
+### bitwise Operators
+![Operators](./images/Endian-Overview.png)
+![Operators](./images/bitwise_operator.png)
+
+
+## Control Flow
+1. Decision Making Statements [if-then, if-then-else, switch, goto]
+2. Looping Statments [for, while, do-while]
+3. Branching Statements [break, continue, return]
+
+### Decision Making Statements
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 10;
+ 
+   /* check the boolean condition using if statement */
+	
+   if( a < 20 ) {
+      /* if condition is true then print the following */
+      printf("a is less than 20\n" );
+   }
+   
+   printf("value of a is : %d\n", a);
+ 
+   return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 100;
+ 
+   /* check the boolean condition */
+   if( a < 20 ) {
+      /* if condition is true then print the following */
+      printf("a is less than 20\n" );
+   } else {
+      /* if condition is false then print the following */
+      printf("a is not less than 20\n" );
+   }
+   
+   printf("value of a is : %d\n", a);
+ 
+   return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 100;
+   int b = 200;
+ 
+   /* check the boolean condition */
+   if( a == 100 ) {
+   
+      /* if condition is true then check the following */
+      if( b == 200 ) {
+         /* if condition is true then print the following */
+         printf("Value of a is 100 and b is 200\n" );
+      }
+   }
+   
+   printf("Exact value of a is : %d\n", a );
+   printf("Exact value of b is : %d\n", b );
+ 
+   return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   char grade = 'B';
+
+   switch(grade) {
+      case 'A' :
+         printf("Excellent!\n" );
+         break;
+      case 'B' :
+      case 'C' :
+         printf("Well done\n" );
+         break;
+      case 'D' :
+         printf("You passed\n" );
+         break;
+      case 'F' :
+         printf("Better try again\n" );
+         break;
+      default :
+         printf("Invalid grade\n" );
+   }
+   
+   printf("Your grade is  %c\n", grade );
+ 
+   return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 100;
+   int b = 200;
+ 
+   switch(a) {
+   
+      case 100: 
+         printf("This is part of outer switch\n", a );
+      
+         switch(b) {
+            case 200:
+               printf("This is part of inner switch\n", a );
+         }
+   }
+   
+   printf("Exact value of a is : %d\n", a );
+   printf("Exact value of b is : %d\n", b );
+ 
+   return 0;
+}
+```
+
+### Looping Statments
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 10;
+
+   /* while loop execution */
+   while( a < 20 ) {
+      printf("value of a: %d\n", a);
+      a++;
+   }
+ 
+   return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   int a;
+	
+   /* for loop execution */
+   for( a = 10; a < 20; a = a + 1 ){
+      printf("value of a: %d\n", a);
+   }
+ 
+   return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 10;
+
+   /* do loop execution */
+   do {
+      printf("value of a: %d\n", a);
+      a = a + 1;
+   }while( a < 20 );
+ 
+   return 0;
+}
+```
+
+### Branching Statements
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 10;
+
+   /* while loop execution */
+   while( a < 20 ) {
+   
+      printf("value of a: %d\n", a);
+      a++;
+		
+      if( a > 15) {
+         /* terminate the loop using break statement */
+         break;
+      }
+   }
+ 
+   return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 10;
+
+   /* do loop execution */
+   do {
+   
+      if( a == 15) {
+         /* skip the iteration */
+         a = a + 1;
+         continue;
+      }
+		
+      printf("value of a: %d\n", a);
+      a++;
+   
+   } while( a < 20 );
+ 
+   return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 10;
+
+   /* do loop execution */
+   LOOP:do {
+   
+      if( a == 15) {
+         /* skip the iteration */
+         a = a + 1;
+         goto LOOP;
+      }
+		
+      printf("value of a: %d\n", a);
+      a++;
+
+   }while( a < 20 );
+ 
+   return 0;
+}
+```
+
+## Arrays
+* The Data item in an array are referred to as elements
+* The elements in an array have to be the same type (int, long, double, etc )
+```c++
+// Declaration
+long image_IDs[100];
+/* Thye numbers between square brackets defines how many elements the
+array contains.
+*/
+
+// Accessing an array elements
+image_IDs[0]; // Access the zero element array
+
+/* In C, the array index start from 0....*/
+
+/* Its very command to use a loop to access each elements in an arry*/
+```
+![Operators](./images/Array-In-C.png)
+
+```c++
+#include <stdio.h>
+
+#define MONTHS 12
+int main()
+{
+    int days[MONTHS] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int index;
+
+    for (index = 0; index < MONTHS; index++)
+    {
+        printf("Month %d has %d days\n", index+1, days[index]);
+    }
+    return 0;
+}
+```
+
+```c++
+#include <stdio.h>
+
+#define H 5
+#define W 5
+
+int main()
+{
+    int image[H][W];
+    for (int i = 0; i < H; i++)
+    {
+        for (int j = 0; j < W; j++)
+        {
+            image[i][j] = rand()%10;
+        }
+    }
+
+    for (int i = 0; i < H; i++)
+    {
+        for (int j = 0; j < W; j++)
+        {
+            printf("%d ", image[i][j]);
+        }
+        printf("\n");
+    } 
+
+    int image_temp[2][2] = { {1, 2},
+                             {3, 4}};
+    
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("%d ", image_temp[i][j]);
+        }
+        printf("\n");
+    } 
+    
+    return 0;   
+} 
+```
+## Function
+* A function in C is the same as subroutines or procedures in other programming Language
+```c++
+void function(); // Function declaration
+
+void function(){ // Function Definition
+    // Code here
+}
+/* The block of code between braces following the function header
+is called the function body */
+```
+
+```c++
+syntax:
+Return_type Function_name(parameters - separated by commas)
+{
+    //Code Here
+}
+
+/* If the functions doesn't return any value then it use Void*/
+```
+
+```c++
+
+void function()
+{
+    //code here
+}
+
+int main()
+{
+    function();
+    return 0;
+}
+
+/* This doesn't need a definition/prototype declaration
+```
+
+```c++
+void function();
+int main()
+{
+    function();
+}
+
+void function()
+{
+    //code here
+}
+
+/* This need a definition/prototype declaration
+```
+
+### Arguments and Parameters
+1. A parameter is a variable in a function declaration and function
+   definition/implementation
+2. When a function is called, the arguments are the data you pass into the functions parameters.
+
+```c++
+void function(int a, int b) // Here a and b is Param
+{
+
+}
+
+int x = 10;
+int y = 20;
+
+function(x, y); // Here x and y is arguments
+```
+
+### Return values
+
+```c++
+int add(int a, int b)
+{
+    return a+b;
+}
+
+int addition_val = add(10, 20);
+```
+
+Note: Functions and arguments are stored in Stack in the program memory...
+
+## String
+![Operators](./images/String-in-C.png)
+* A string constant or stringlieral is a sequence of characters or symbols
+  between a pair of double-quote characters
+```c++
+char name[] = "Geeks";
+char name[5] = "Geeks";
+char name[5] = {'G', 'e', 'e', 'k', 's'};
+
+/* String always terminates with \0*/
+
+/* Note C has no special variable type for string like C++ */
+/* Strings in C are stored in an array of type char*
+``` 
+
+```c++
+char string[5] = "hello";
+size_t length = strlen(string);
+size_t i = 0; 
+for (; i < length; i++) {
+    printf("%c\n", string[i]);    /* Print each character of the string. */
+}
+```
+
+In-build String Functions,
+![Operators](./images/string-functions.png)
+
+
+
+
+
+
+
+
 
 
 
